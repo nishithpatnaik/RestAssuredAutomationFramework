@@ -5,8 +5,8 @@
     <classes>
       <class name="api.testcases.DataDriven_Store_test">
         <methods>
-          <include name="Test_GetOrder" invocation-numbers="2"/>
-          <include name="Test_DeleteOrder" invocation-numbers="1"/>
+          <include name="Test_GetOrder" invocation-numbers="0 1"/>
+          <include name="Test_DeleteOrder" invocation-numbers="2"/>
         </methods>
       </class> <!-- api.testcases.DataDriven_Store_test -->
     </classes>
