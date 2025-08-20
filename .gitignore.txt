@@ -1,0 +1,6 @@
+target
+Reports
+.settings
+.classpath
+.project
+.gitignore
