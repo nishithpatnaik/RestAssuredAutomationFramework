@@ -5,7 +5,7 @@
     <classes>
       <class name="api.testcases.Pet_test">
         <methods>
-          <include name="Test_AddPet"/>
+          <include name="Test_FindPet"/>
           <include name="CreatePetData"/>
         </methods>
       </class> <!-- api.testcases.Pet_test -->

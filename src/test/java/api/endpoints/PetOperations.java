@@ -29,5 +29,49 @@ public class PetOperations {
 		return response;
 	}
 	
+	
+	public static Response FindPet(Integer petId)
+	{
+		Response response = 
+				
+		given()
+			.log().all()
+			.pathParam("petId", petId)
+		
+		.when()
+			.get(pet_urls.getString("find_pet_get_url"));
+		
+		return response;
+	}
+	
+	
+	public static Response UpdatePet(PetPOJO payload)
+	{
+		Response response =
+		
+		given()
+			.log().all()
+			.header("Content-Type","application/json")
+			.body(payload)
+		.when()
+			.put(pet_urls.getString("update_pet_put_url"));
+		
+		return response;
+	}
+	
+	public static Response DeletePet(Integer petId)
+	{
+		Response response =
+				
+		given()
+			.log().all()
+			.pathParam("petId", petId)
+		.when()
+			.delete(pet_urls.getString("delete_pet_delete_url"));
+		
+		return response;
+			
+	}
+	
 
 }

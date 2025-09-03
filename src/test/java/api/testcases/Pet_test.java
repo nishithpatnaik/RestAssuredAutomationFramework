@@ -82,7 +82,7 @@ public class Pet_test {
 		 * System.out.println(jp.getString("tags["+i+"].name"));
 		 * 
 		 * 
-		 * }
+		 * }gih
 		 */
 		
 		
@@ -92,6 +92,47 @@ public class Pet_test {
 	public void Test_FindPet()
 	{
 		System.out.println("***********FIND PET************");
+		Response response = PetOperations.FindPet(pet_payload.getId());
+		
+		response.then()
+			.log().all()
+			.assertThat()
+			.statusCode(equalTo(200))
+			.body("id", equalTo(pet_payload.getId()))
+			.body("name", equalTo(pet_payload.getName()))
+			.body("category.name", equalTo(pet_payload.getCategory().getName()));
+		
+			
+	}
+	
+	@Test(priority=3)
+	public void Update_Pet()
+	{
+		System.out.println("***********UPDATE PET************");
+		pet_payload.setName(faker.animal().name());
+		Response response = PetOperations.UpdatePet(pet_payload);
+		
+		response.then()
+			.log().all()
+			.assertThat()
+			.statusCode(equalTo(200))
+			.body("id",equalTo(pet_payload.getId()))
+			.body("name",equalTo(pet_payload.getName()));
+		
+	}
+	
+	@Test(priority=4)
+	public void Delete_Pet()
+	{
+		System.out.println("***********DELETE PET************");
+		Response response = PetOperations.DeletePet(pet_payload.getId());
+		
+		response.then()
+			.log().all()
+			.assertThat()
+			.statusCode(equalTo(200))
+			.body("message",equalTo(pet_payload.getId().toString()));
+		
 	}
 
 }

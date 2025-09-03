@@ -35,13 +35,14 @@ public class UserOperations {
 		
 	//UPDATE USER
 	
-	public static Response UpdateUser(String userName)
+	public static Response UpdateUser(UserPOJO_payload payload)
 	{
 		Response response =
 		given()
 			.log().all()
 			.header("Content-Type","application/json")
-			.pathParam("username", userName)
+			.pathParam("username", payload.getUserName())
+			.body(payload)
 		.when()
 			.put(API_Endpoints.update_user_put_url);
 		

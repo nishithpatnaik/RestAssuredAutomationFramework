@@ -48,17 +48,15 @@ public class DataDriven_User_test {
 	
 	
 	//@Test(priority=3, dataProvider="UserNames_Data",dataProviderClass = User_DataProviders.class)
-	public void Test_UpdateUser(String userName)
-	{
-		System.out.println("UPDATE AN USER -- ");
-		
-		Response response = UserOperations.UpdateUser(userName);
-		
-		String res = response.then()
-		.log().all().extract().asString();
-		JsonPath jp1 = new JsonPath(res);
-		Assert.assertEquals(jp1.get("message"), "no data");
-	}
+	/*
+	 * public void Test_UpdateUser(String userName) {
+	 * System.out.println("UPDATE AN USER -- ");
+	 * 
+	 * Response response = UserOperations.UpdateUser(user_payload);
+	 * 
+	 * String res = response.then() .log().all().extract().asString(); JsonPath jp1
+	 * = new JsonPath(res); Assert.assertEquals(jp1.get("message"), "no data"); }
+	 */
 	
 	
 	

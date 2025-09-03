@@ -1,5 +1,6 @@
 package api.testcases;
 
+import static org.hamcrest.Matchers.equalTo;
 import static org.testng.Assert.assertEquals;
 
 import org.testng.Assert;
@@ -62,14 +63,14 @@ public class User_test {
 	{
 		System.out.println("UPDATE AN USER -- ");
 		
-		user_payload.setFirstName(faker.name().firstName());
+		user_payload.setEmail(faker.internet().emailAddress());
 		
-		Response response = UserOperations.UpdateUser(this.user_payload.getUserName());
+		Response response = UserOperations.UpdateUser(user_payload);
 		
-		String res = response.then()
-		.log().all().extract().asString();
-		JsonPath jp1 = new JsonPath(res);
-		Assert.assertEquals(jp1.get("message"), "no data");
+		response.then()
+				.log().all()
+				.assertThat()
+				.statusCode(equalTo(200));
 	}
 	
 	
