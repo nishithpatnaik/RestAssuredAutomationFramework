@@ -2,8 +2,8 @@ package api.payloads;
 
 import java.util.List;
 
-public class PetPOJO {
-	
+public class PetPOJO
+{
 	private Integer id;
 	private Category category;
 	private String name;

@@ -1,7 +1,7 @@
 package api.endpoints;
 import static io.restassured.RestAssured.*;
 import java.util.ResourceBundle;
-import api.payloads.StorePOJO_payload;
+import api.payloads.StorePOJO;
 import io.restassured.response.Response;
 
 //THIS WAS CREATED TO REPLICATE OPERATIONS BUT WHILE READING URL END POINTS FROM THE API_Endpoints.properties file
@@ -13,7 +13,7 @@ public class StoreOperations2 {
 	
 	
 	//CREATE A NEW ORDER
-	public static Response CreateOrder(StorePOJO_payload payload)
+	public static Response CreateOrder(StorePOJO payload)
 	{
 		//String placeOrderURL = getURL().getString("place_order_post_url");
 		Response response =

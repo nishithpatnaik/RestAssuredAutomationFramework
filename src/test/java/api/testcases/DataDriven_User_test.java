@@ -4,7 +4,7 @@ import static org.testng.Assert.assertEquals;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import api.endpoints.UserOperations;
-import api.payloads.UserPOJO_payload;
+import api.payloads.UserPOJO;
 import api.utilities.User_DataProviders;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -16,7 +16,7 @@ public class DataDriven_User_test {
 	public void Test_CreateUser(String Id, String UserName, String FirstName, String LastName, String Email, String Password, String Phone)
 	{
 		System.out.println("**********CREATE USER*************");
-		UserPOJO_payload user_payload = new UserPOJO_payload();
+		UserPOJO user_payload = new UserPOJO();
 		user_payload.setId(Integer.parseInt(Id));
 		user_payload.setUserName(UserName);
 		user_payload.setFirstName(FirstName);

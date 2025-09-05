@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="api.testcases.Pet_test">
+      <class name="api.testcases.DataDriven_Pet_test">
         <methods>
           <include name="Test_FindPet"/>
-          <include name="CreatePetData"/>
         </methods>
-      </class> <!-- api.testcases.Pet_test -->
+      </class> <!-- api.testcases.DataDriven_Pet_test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

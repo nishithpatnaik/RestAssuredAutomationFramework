@@ -3,7 +3,7 @@ package api.testcases;
 import org.testng.annotations.Test;
 import api.endpoints.StoreOperations;//Test with API_Endpoints.java
 import api.endpoints.StoreOperations2; //Test with API_Endpoints.properties
-import api.payloads.StorePOJO_payload;
+import api.payloads.StorePOJO;
 import api.utilities.Store_DataProvider;
 import io.restassured.response.Response;
 
@@ -19,7 +19,7 @@ public class DataDriven_Store_test {
 		System.out.println("**********CREATE STORE ORDER*************");
 		
 		//Create Store POJO Object
-		StorePOJO_payload store_payload = new StorePOJO_payload();
+		StorePOJO store_payload = new StorePOJO();
 		
 		store_payload.setId(id.intValue()); //NOTE: The excel always treats numeric cells as double when read using Apache POISo 
 		store_payload.setPetId(petId.intValue());

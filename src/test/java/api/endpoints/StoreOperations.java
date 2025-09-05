@@ -1,13 +1,13 @@
 package api.endpoints;
 import static io.restassured.RestAssured.*;
 
-import api.payloads.StorePOJO_payload;
+import api.payloads.StorePOJO;
 import io.restassured.response.Response;
 
 public class StoreOperations {
 	
 	//CREATE A NEW ORDER
-	public static Response CreateOrder(StorePOJO_payload payload)
+	public static Response CreateOrder(StorePOJO payload)
 	{
 		Response response =
 		given()

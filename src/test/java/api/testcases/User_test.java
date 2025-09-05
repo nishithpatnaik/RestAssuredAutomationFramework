@@ -10,14 +10,14 @@ import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 
 import api.endpoints.UserOperations;
-import api.payloads.UserPOJO_payload;
+import api.payloads.UserPOJO;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 
 public class User_test {
 	
 	Faker faker = new Faker();
-	UserPOJO_payload user_payload = new UserPOJO_payload();
+	UserPOJO user_payload = new UserPOJO();
 
 	@BeforeClass
 	public void Generate_UserData()

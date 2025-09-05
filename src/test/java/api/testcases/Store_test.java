@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 import com.github.javafaker.Faker;
 
 import api.endpoints.StoreOperations;
-import api.payloads.StorePOJO_payload;
+import api.payloads.StorePOJO;
 import io.restassured.response.Response;
 
 public class Store_test {
 	
 	//Create Store Test Data
-	StorePOJO_payload store_payload = new StorePOJO_payload();
+	StorePOJO store_payload = new StorePOJO();
 	Faker faker = new Faker();
 	
 	@BeforeClass

@@ -1,6 +1,6 @@
 package api.payloads;
 
-public class StorePOJO_payload {
+public class StorePOJO {
 	
 	/*
 	 * {

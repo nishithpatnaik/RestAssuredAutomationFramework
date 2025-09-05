@@ -1,12 +1,12 @@
 package api.endpoints;
 import static io.restassured.RestAssured.*;
-import api.payloads.UserPOJO_payload;
+import api.payloads.UserPOJO;
 import io.restassured.response.Response;
 
 public class UserOperations {
 	
 	//CREATE USER
-	public static Response CreateUser(UserPOJO_payload payload)
+	public static Response CreateUser(UserPOJO payload)
 	{
 		Response response =
 		given()
@@ -14,7 +14,7 @@ public class UserOperations {
 			.header("Content-Type","application/json")
 			.body(payload)
 		.when()
-			.post(API_Endpoints.create_user_post__url);
+			.post(API_Endpoints.create_user_post__url); //Here I am using API_Endpoint.java class to store all my Endpoints.
 		
 		return response;
 	}
@@ -35,7 +35,7 @@ public class UserOperations {
 		
 	//UPDATE USER
 	
-	public static Response UpdateUser(UserPOJO_payload payload)
+	public static Response UpdateUser(UserPOJO payload)
 	{
 		Response response =
 		given()
